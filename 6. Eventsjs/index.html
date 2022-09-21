@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javaScript Events</title>
+    <style>
+      body {
+        background-color: beige;
+        font-family: sans-serif;
+      }
+      strong {
+        color: blue;
+      }
+      /* Psedoclass selectors in CSS allow us to alter the look of HTML element based on what special
+        state that selected element is in */
+      strong:hover {
+        color: lightgray;
+      }
+      .color-bluegradient,
+      .color-greengradient {
+        border-radius: 10px;
+        color: white;
+        padding: 10px;
+        font-size: 20px;
+      }
+      .color-bluegradient {
+        transition: all 5s ease-in-out;
+        background: rgb(2, 0, 36);
+        background: linear-gradient(
+          90deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(9, 9, 121, 1) 35%,
+          rgba(0, 212, 255, 1) 100%
+        );
+      }
+      .color-greenradient {
+        transition: all 0.5s ease-in-out;
+        background: rgb(2, 0, 36);
+        background: linear-gradient(
+          90deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(9, 121, 25, 1) 35%,
+          rgba(0, 255, 24, 1) 100%
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <h1>javaScript Events</h1>
+    <div id="example">
+      <h1>Bubbling = from chid to parent element</h1>
+      <p id="parent-1">
+        Lorem ipsum
+        <strong class="" child-1> sit amet consectetur adipisicing elit</strong
+        >. Accusamus reprehenderit libero a deserunt perspiciatis, sequi veniam
+        ipsa! In nihil, dolores ea autem beatae vitae voluptas vel, perspiciatis
+        reiciendis nostrum iure!
+      </p>
+      <button onclick="changeBlue();">Change My look</button>
+    </div>
+    <hr />
+    <div id="example">
+      <h1>Capturing = from parent to child element</h1>
+      <p id="parent-2">
+        Lorem ipsum
+        <strong class="" child-2> sit amet consectetur adipisicing elit</strong
+        >. Accusamus reprehenderit libero a deserunt perspiciatis, sequi veniam
+        ipsa! In nihil, dolores ea autem beatae vitae voluptas vel, perspiciatis
+        reiciendis nostrum iure!
+      </p>
+      <button onclick="changeGreen();">Change My look</button>
+    </div>
+    <hr />
+    <p>
+      Clink on the 'ispsum' text to see the example from the console. Click
+      'Reset' to clear the console
+    </p>
+    <button onClick="console.clear();">Reset</button>
+    <script src="bubble-capture.js"></script>
+    <script src="timed-color-changer.js"></script>
+  </body>
+</html>
