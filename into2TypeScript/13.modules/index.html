@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typescript: Modules</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 0.5px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Typescript: Modules</h1>
+    <h3>Default Exports</h3>
+    <p>
+      Default export is used to export any one of the constructs such as class,
+      interface, function, and so on from current module as a default one.
+    </p>
+    <p>
+      Default exports are handy in case you need to export a class that has
+      almost all functionalities attached, such as javascript library object
+      jQuery
+    </p>
+    <p>
+      Name for the default exported construct are optional. You can assign a
+      name to the default construct while importing it into the other file
+    </p>
+    <p>As you cannot have more than one default export per module</p>
+    <p>
+      To make a default export add default keyword along with export keyword. We
+      can add this in front of any one of the module construct
+    </p>
+    <p><span>Syntax: </span>export default class{}</p>
+    <p>export class classname{} <- Non default export class</p>
+    <p><span>Example: </span>import Product from './default_export';</p>
+    <p>
+      To import default export give any name along with the import keyword.
+      Instead of enclosing it within a curly block like other named exports,
+      give name directly
+    </p>
+    <br />
+    <code
+      ><p>Example: export default class {</p>
+      <p>&emsp;&emsp;let productName:string = "Tablet";</p>
+      <p>
+        &emsp;&emsp;&emsp;&emsp;getProductDetails(productId:number):string {
+      </p>
+      <p>&emsp;&emsp;}</p>
+      <p>}</p>
+      <p>export class utility { }</p> </code
+    ><br />
+    <code>
+      <p>import Product, {Utility} from './default_export';</p>
+      <p>let product = new Product();</p>
+      <p>let details = product.getProductDetails(1001);</p>
+    </code>
+    <table border="0.5px solid black">
+      <tr>
+        <th>Module</th>
+        <th>Namespace</th>
+      </tr>
+      <tr>
+        <td>Organizes code</td>
+        <td>Organizes code</td>
+      </tr>
+      <tr>
+        <td>
+          Have native support with Node.js module loader. All modern browsers
+          are supported with a module loader
+        </td>
+        <td>No special loader required</td>
+      </tr>
+      <tr>
+        <td>Supports ES2015 module syntax</td>
+        <td>
+          ES2015 does not have a Namespace concept. It is mainly used to prevent
+          global namespace pollution
+        </td>
+      </tr>
+      <tr>
+        <td>Suited for large-scale applications</td>
+        <td>Suited for small-scale applications</td>
+      </tr>
+    </table>
+    <script src="2.module_import.js"></script>
+  </body>
+</html>
