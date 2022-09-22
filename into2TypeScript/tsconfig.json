@@ -5,6 +5,8 @@
     "module": "commonjs",
     "sourceMap": true,
     "allowJs": true,
-    "noEmit": true
+    "noEmit": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   }
 }
